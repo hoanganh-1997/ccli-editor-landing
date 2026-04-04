@@ -7,16 +7,34 @@ export function Waitlist() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async () => {
     if (!email.includes("@") || !email.includes(".")) return;
     setLoading(true);
-    // TODO: Replace with your actual API endpoint (Supabase, ConvertKit, Resend, etc.)
-    // Example:
-    // await fetch("/api/waitlist", { method: "POST", body: JSON.stringify({ email }) });
-    await new Promise((r) => setTimeout(r, 800));
-    setSubmitted(true);
-    setLoading(false);
+    setError("");
+
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong.");
+        setLoading(false);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,6 +76,10 @@ export function Waitlist() {
                 {loading ? "..." : "Join waitlist"}
               </button>
             </div>
+          )}
+
+          {error && (
+            <p className="text-red-400 text-sm mt-3">{error}</p>
           )}
 
           <p className="text-dim text-xs mt-4">
