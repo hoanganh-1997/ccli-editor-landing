@@ -42,10 +42,11 @@ export function Waitlist() {
       <FadeIn>
         <div className="bg-surface rounded-2xl border border-border p-12 text-center">
           <h2 className="text-2xl font-extrabold text-white font-mono mb-2 tracking-tight">
-            Get early access
+            Your Claude Code workflow, complete.
           </h2>
-          <p className="text-muted text-sm mb-7">
-            Join the waitlist. Be first to know when CCLI Editor launches.
+          <p className="text-muted text-sm mb-7 max-w-[420px] mx-auto">
+            Terminal, file tree, git, preview, editor, token tracking, and
+            history — in one window. Stop context switching. Start shipping.
           </p>
 
           {submitted ? (
@@ -55,7 +56,7 @@ export function Waitlist() {
                 You&apos;re on the list.
               </p>
               <p className="text-sm text-muted mt-1.5">
-                We&apos;ll notify you when CCLI Editor launches.
+                We&apos;ll notify you when CCLI Editor is ready.
               </p>
             </div>
           ) : (
@@ -73,18 +74,20 @@ export function Waitlist() {
                 disabled={loading}
                 className="px-6 py-3 rounded-[10px] bg-amber text-bg text-sm font-bold font-mono hover:opacity-85 transition-opacity disabled:opacity-50"
               >
-                {loading ? "..." : "Join waitlist"}
+                {loading ? "..." : "Get early access"}
               </button>
             </div>
           )}
 
-          {error && (
-            <p className="text-red-400 text-sm mt-3">{error}</p>
-          )}
+          {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
 
-          <p className="text-dim text-xs mt-4">
-            Free and open source. No spam, ever.
-          </p>
+          <div className="flex items-center justify-center gap-4 mt-5 text-[12px] text-dim font-mono">
+            <span>Free</span>
+            <span className="text-border">·</span>
+            <span>No account required</span>
+            <span className="text-border">·</span>
+            <span>No spam, ever</span>
+          </div>
         </div>
       </FadeIn>
     </section>

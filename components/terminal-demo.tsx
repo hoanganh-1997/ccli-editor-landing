@@ -6,7 +6,10 @@ import { FadeIn } from "./fade-in";
 
 const terminalLines = [
   { c: "blank", t: "" },
-  { c: "text-amber font-bold", t: "> Add authentication with JWT to the login endpoint" },
+  {
+    c: "text-amber font-bold",
+    t: "> Add authentication with JWT to the login endpoint",
+  },
   { c: "blank", t: "" },
   { c: "text-muted", t: "  I'll add JWT authentication. Here's my plan:" },
   { c: "blank", t: "" },
@@ -23,46 +26,88 @@ const terminalLines = [
 ];
 
 const fileTree = [
-  { depth: 0, name: ".claude", type: "folder", open: true },
-  { depth: 1, name: "commands", type: "folder", open: false },
-  { depth: 1, name: "plans", type: "folder", open: false },
-  { depth: 1, name: "skills", type: "folder", open: false },
-  { depth: 1, name: "settings.json", type: "file", icon: "⚙", color: "text-zinc-500" },
-  { depth: 0, name: "docs", type: "folder", open: false },
   { depth: 0, name: "src", type: "folder", open: true },
-  { depth: 1, name: "components", type: "folder", open: true },
-  { depth: 2, name: "DiffViewer.tsx", type: "file", icon: "TS", color: "text-blue-400" },
-  { depth: 2, name: "Editor.tsx", type: "file", icon: "TS", color: "text-blue-400" },
-  { depth: 2, name: "FileTree.tsx", type: "file", icon: "TS", color: "text-blue-400" },
-  { depth: 2, name: "Preview.tsx", type: "file", icon: "TS", color: "text-blue-400" },
+  { depth: 1, name: "components", type: "folder", open: false },
   { depth: 1, name: "middleware", type: "folder", open: true },
-  { depth: 2, name: "auth.ts", type: "file", icon: "TS", color: "text-blue-400", status: "modified" as const },
+  {
+    depth: 2,
+    name: "auth.ts",
+    type: "file",
+    icon: "TS",
+    color: "text-blue-400",
+    status: "modified" as const,
+  },
   { depth: 1, name: "routes", type: "folder", open: true },
-  { depth: 2, name: "login.ts", type: "file", icon: "TS", color: "text-blue-400", status: "modified" as const },
+  {
+    depth: 2,
+    name: "login.ts",
+    type: "file",
+    icon: "TS",
+    color: "text-blue-400",
+    status: "modified" as const,
+  },
   { depth: 1, name: "utils", type: "folder", open: true },
-  { depth: 2, name: "jwt.ts", type: "file", icon: "TS", color: "text-blue-400", status: "added" as const },
-  { depth: 0, name: "package.json", type: "file", icon: "{}", color: "text-yellow-500" },
-  { depth: 0, name: "CLAUDE.md", type: "file", icon: "MD", color: "text-zinc-400" },
+  {
+    depth: 2,
+    name: "jwt.ts",
+    type: "file",
+    icon: "TS",
+    color: "text-blue-400",
+    status: "added" as const,
+  },
+  { depth: 0, name: "tests", type: "folder", open: false },
+  {
+    depth: 0,
+    name: "package.json",
+    type: "file",
+    icon: "{}",
+    color: "text-yellow-500",
+  },
+  {
+    depth: 0,
+    name: "CLAUDE.md",
+    type: "file",
+    icon: "MD",
+    color: "text-zinc-400",
+  },
 ];
 
 const diffContent = [
   { type: "header", text: "src/middleware/auth.ts" },
   { type: "info", text: "@@ -1,4 +1,18 @@" },
-  { type: "normal", text: " import { Request, Response, NextFunction } from \"express\";" },
-  { type: "added", text: " import { verifyToken } from \"../utils/jwt\";" },
+  {
+    type: "normal",
+    text: ' import { Request, Response, NextFunction } from "express";',
+  },
+  { type: "added", text: ' import { verifyToken } from "../utils/jwt";' },
   { type: "normal", text: "" },
-  { type: "removed", text: " export function auth(req: Request, res: Response, next: NextFunction) {" },
-  { type: "added", text: " export async function auth(req: Request, res: Response, next: NextFunction) {" },
-  { type: "added", text: "   const token = req.headers.authorization?.split(\" \")[1];" },
+  {
+    type: "removed",
+    text: " export function auth(req: Request, res: Response, next: NextFunction) {",
+  },
+  {
+    type: "added",
+    text: " export async function auth(req: Request, res: Response, next: NextFunction) {",
+  },
+  {
+    type: "added",
+    text: '   const token = req.headers.authorization?.split(" ")[1];',
+  },
   { type: "added", text: "   if (!token) {" },
-  { type: "added", text: "     return res.status(401).json({ error: \"No token\" });" },
+  {
+    type: "added",
+    text: '     return res.status(401).json({ error: "No token" });',
+  },
   { type: "added", text: "   }" },
   { type: "added", text: "   try {" },
   { type: "added", text: "     const payload = await verifyToken(token);" },
   { type: "added", text: "     req.user = payload;" },
   { type: "normal", text: "     next();" },
   { type: "added", text: "   } catch {" },
-  { type: "added", text: "     return res.status(403).json({ error: \"Invalid token\" });" },
+  {
+    type: "added",
+    text: '     return res.status(403).json({ error: "Invalid token" });',
+  },
   { type: "added", text: "   }" },
   { type: "normal", text: " }" },
 ];
@@ -89,6 +134,11 @@ export function TerminalDemo() {
   return (
     <section className="max-w-[1000px] mx-auto mb-24 px-6">
       <FadeIn>
+        <p className="text-center text-muted text-[15px] mb-6 font-mono">
+          8 tools. One window. Zero context switching.
+        </p>
+      </FadeIn>
+      <FadeIn delay={0.05}>
         <div
           ref={ref}
           className="rounded-xl border border-border overflow-hidden font-mono text-[11px] leading-[1.6]"
@@ -106,7 +156,7 @@ export function TerminalDemo() {
             </div>
             <div className="flex-1 text-center">
               <span className="text-[11px] text-zinc-400 font-medium">
-                claude-editor
+                CCLI Editor
               </span>
             </div>
           </div>
@@ -186,7 +236,9 @@ export function TerminalDemo() {
                     <span
                       key={m}
                       className={`px-1.5 py-0.5 rounded cursor-default ${
-                        m === "Opus" ? "text-amber bg-amber/10" : "hover:text-zinc-300"
+                        m === "Opus"
+                          ? "text-amber bg-amber/10"
+                          : "hover:text-zinc-300"
                       }`}
                     >
                       {m}
@@ -289,9 +341,21 @@ export function TerminalDemo() {
                     {/* Changed files */}
                     <div className="border-b border-border">
                       {[
-                        { name: "auth.ts", status: "M", color: "text-yellow-500" },
-                        { name: "login.ts", status: "M", color: "text-yellow-500" },
-                        { name: "jwt.ts", status: "A", color: "text-green-500" },
+                        {
+                          name: "auth.ts",
+                          status: "M",
+                          color: "text-yellow-500",
+                        },
+                        {
+                          name: "login.ts",
+                          status: "M",
+                          color: "text-yellow-500",
+                        },
+                        {
+                          name: "jwt.ts",
+                          status: "A",
+                          color: "text-green-500",
+                        },
                       ].map((f, i) => (
                         <div
                           key={i}
@@ -299,8 +363,15 @@ export function TerminalDemo() {
                             i === 0 ? "bg-white/5" : ""
                           }`}
                         >
-                          <span className={`${f.color} font-bold w-3`}>{f.status}</span>
-                          <span className="text-zinc-300 truncate">{f.name}</span>
+                          <span className={`${f.color} font-bold w-3`}>
+                            {f.status}
+                          </span>
+                          <span className="text-zinc-300 truncate">
+                            {f.name}
+                          </span>
+                          <span className="ml-auto text-[8px] text-zinc-600">
+                            ☐
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -309,43 +380,71 @@ export function TerminalDemo() {
                       {diffContent.map((line, i) => {
                         if (line.type === "header")
                           return (
-                            <div key={i} className="px-3 py-1 text-zinc-400 font-bold bg-white/5">
+                            <div
+                              key={i}
+                              className="px-3 py-1 text-zinc-400 font-bold bg-white/5"
+                            >
                               {line.text}
                             </div>
                           );
                         if (line.type === "info")
                           return (
-                            <div key={i} className="px-3 py-0.5 text-purple-400 bg-purple-500/5">
+                            <div
+                              key={i}
+                              className="px-3 py-0.5 text-purple-400 bg-purple-500/5"
+                            >
                               {line.text}
                             </div>
                           );
-                        const bg = line.type === "added" ? "bg-green-500/10" : line.type === "removed" ? "bg-red-500/10" : "";
-                        const color = line.type === "added" ? "text-green-400" : line.type === "removed" ? "text-red-400" : "text-zinc-500";
-                        const prefix = line.type === "added" ? "+" : line.type === "removed" ? "-" : " ";
+                        const bg =
+                          line.type === "added"
+                            ? "bg-green-500/10"
+                            : line.type === "removed"
+                            ? "bg-red-500/10"
+                            : "";
+                        const color =
+                          line.type === "added"
+                            ? "text-green-400"
+                            : line.type === "removed"
+                            ? "text-red-400"
+                            : "text-zinc-500";
+                        const prefix =
+                          line.type === "added"
+                            ? "+"
+                            : line.type === "removed"
+                            ? "-"
+                            : " ";
                         return (
                           <div
                             key={i}
                             className={`px-3 whitespace-pre ${bg} ${color}`}
                             style={{
-                              borderLeft: line.type !== "normal"
-                                ? `2px solid ${line.type === "added" ? "rgba(34,197,94,0.3)" : "rgba(239,68,68,0.3)"}`
-                                : "2px solid transparent",
+                              borderLeft:
+                                line.type !== "normal"
+                                  ? `2px solid ${
+                                      line.type === "added"
+                                        ? "rgba(34,197,94,0.3)"
+                                        : "rgba(239,68,68,0.3)"
+                                    }`
+                                  : "2px solid transparent",
                             }}
                           >
-                            <span className="text-zinc-600 inline-block w-2.5">{prefix}</span>
+                            <span className="text-zinc-600 inline-block w-2.5">
+                              {prefix}
+                            </span>
                             {line.text}
                           </div>
                         );
                       })}
                     </div>
-                    {/* Accept/Revert */}
+                    {/* Stage/Discard per hunk */}
                     <div className="border-t border-border p-2">
                       <div className="flex gap-1.5">
                         <button className="flex-1 py-1 rounded text-[9px] font-semibold bg-green-600/20 text-green-400">
-                          ✓ Accept
+                          ✓ Stage hunk
                         </button>
                         <button className="flex-1 py-1 rounded text-[9px] font-semibold bg-red-600/20 text-red-400">
-                          ✗ Revert
+                          ✗ Discard
                         </button>
                       </div>
                     </div>
@@ -354,19 +453,41 @@ export function TerminalDemo() {
 
                 {rightTab === "preview" && (
                   <div className="flex flex-col h-full">
-                    <div className="flex items-center gap-2 px-3 py-1.5 border-b border-border text-[9px]" style={{ background: headerBg }}>
+                    <div
+                      className="flex items-center gap-2 px-3 py-1.5 border-b border-border text-[9px]"
+                      style={{ background: headerBg }}
+                    >
                       <span className="text-zinc-500">←</span>
                       <span className="text-zinc-500">→</span>
                       <span className="text-zinc-500">⟳</span>
                       <div className="flex-1 bg-white/5 rounded px-2 py-0.5 text-zinc-500">
-                        localhost:3000
+                        localhost:5173
+                      </div>
+                      <div className="flex gap-1 text-[8px] text-zinc-600">
+                        {["SE", "14", "iPad", "💻"].map((d) => (
+                          <span
+                            key={d}
+                            className={`px-1 rounded cursor-default ${
+                              d === "💻" ? "text-amber bg-amber/10" : ""
+                            }`}
+                          >
+                            {d}
+                          </span>
+                        ))}
                       </div>
                     </div>
                     <div className="flex-1 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-zinc-600 text-[10px]">Browser preview</div>
+                        <div className="w-16 h-10 rounded border border-zinc-700 mx-auto mb-2 flex items-center justify-center">
+                          <span className="text-[8px] text-zinc-600">
+                            Live UI
+                          </span>
+                        </div>
+                        <div className="text-zinc-600 text-[10px]">
+                          Auto-refreshes on file changes
+                        </div>
                         <div className="text-zinc-700 text-[9px] mt-1">
-                          Connect to localhost to see live changes
+                          6 device presets · 25-150% zoom
                         </div>
                       </div>
                     </div>
@@ -376,17 +497,36 @@ export function TerminalDemo() {
                 {rightTab === "history" && (
                   <div className="p-2 space-y-1.5">
                     {[
-                      { msg: "Add JWT authentication", files: 3, time: "just now", cost: "$0.007" },
-                      { msg: "Create project structure", files: 8, time: "5 min ago", cost: "$0.012" },
-                      { msg: "Initialize Tauri v2 app", files: 12, time: "12 min ago", cost: "$0.019" },
+                      {
+                        msg: "Add JWT authentication",
+                        files: 3,
+                        time: "just now",
+                        cost: "$0.007",
+                      },
+                      {
+                        msg: "Create project structure",
+                        files: 8,
+                        time: "5 min ago",
+                        cost: "$0.012",
+                      },
+                      {
+                        msg: "Initialize Tauri v2 app",
+                        files: 12,
+                        time: "12 min ago",
+                        cost: "$0.019",
+                      },
                     ].map((h, i) => (
                       <div
                         key={i}
                         className={`p-2 rounded border text-[10px] cursor-default ${
-                          i === 0 ? "border-amber/20 bg-amber/5" : "border-border"
+                          i === 0
+                            ? "border-amber/20 bg-amber/5"
+                            : "border-border"
                         }`}
                       >
-                        <div className="text-zinc-300 font-medium">{h.msg}</div>
+                        <div className="text-zinc-300 font-medium">
+                          {h.msg}
+                        </div>
                         <div className="flex gap-3 text-zinc-600 mt-0.5 text-[9px]">
                           <span>{h.time}</span>
                           <span>{h.files} files</span>
@@ -394,6 +534,9 @@ export function TerminalDemo() {
                         </div>
                       </div>
                     ))}
+                    <div className="text-[9px] text-zinc-600 text-center pt-1">
+                      Session total: 4,682 tokens · $0.038
+                    </div>
                   </div>
                 )}
               </div>
@@ -407,6 +550,7 @@ export function TerminalDemo() {
           >
             <span className="text-green-500">● Connected</span>
             <span>main</span>
+            <span>↑0 ↓0</span>
             <span>3 uncommitted</span>
             <div className="flex-1" />
             <span>⟡ Session: 4,682 tokens · $0.038</span>

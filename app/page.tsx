@@ -1,10 +1,9 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
-import { Stats } from "@/components/stats";
 import { TerminalDemo } from "@/components/terminal-demo";
 import { Features } from "@/components/features";
+import { Stats } from "@/components/stats";
 import { Comparison } from "@/components/comparison";
-import { Workflow } from "@/components/workflow";
 import { Waitlist } from "@/components/waitlist";
 import { Footer } from "@/components/footer";
 
@@ -13,11 +12,10 @@ export default function HomePage() {
     <>
       <Nav />
       <Hero />
-      <Stats />
       <TerminalDemo />
       <Features />
+      <Stats />
       <Comparison />
-      <Workflow />
       <Waitlist />
       <Footer />
     </>
