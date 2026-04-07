@@ -4,37 +4,30 @@ import { FadeIn } from "@/components/fade-in";
 
 const steps = [
   {
-    title: "Install prerequisites",
-    code: `# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    title: "Install Claude Code CLI",
+    code: `# Install Claude Code CLI globally
+npm install -g @anthropic-ai/claude-code
 
-# Install Node.js 18+ (if not installed)
-brew install node
-
-# Install Tauri CLI
-cargo install tauri-cli --version "^2"
-
-# macOS: Install Xcode Command Line Tools
-xcode-select --install`,
+# Authenticate with your Anthropic API key
+claude login`,
   },
   {
-    title: "Clone and setup",
-    code: `git clone https://github.com/your-username/ccli-editor.git
-cd ccli-editor
-chmod +x setup.sh && ./setup.sh`,
+    title: "Download CCLI Editor",
+    code: `# Download the latest release for your platform:
+# https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest
+#
+# macOS (Apple Silicon): .dmg
+# macOS (Intel):         .dmg
+# Linux:                 .AppImage or .deb
+# Windows:               .msi`,
   },
   {
-    title: "Run in development",
-    code: `cargo tauri dev`,
-  },
-  {
-    title: "Build for production",
-    code: `cargo tauri build
-
-# Output:
-# macOS:   target/release/bundle/dmg/
-# Linux:   target/release/bundle/appimage/
-# Windows: target/release/bundle/msi/`,
+    title: "Install and open a project",
+    code: `# macOS:   Open the .dmg and drag to Applications
+# Linux:   chmod +x *.AppImage && ./*.AppImage
+# Windows: Run the .msi installer
+#
+# Launch CCLI Editor and open any project folder.`,
   },
 ];
 

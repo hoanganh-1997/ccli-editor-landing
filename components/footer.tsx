@@ -22,12 +22,12 @@ export function Footer() {
           Twitter / X
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest"
           target="_blank"
           rel="noopener noreferrer"
           className="text-dim text-xs no-underline hover:text-muted transition-colors"
         >
-          GitHub
+          Releases
         </a>
       </div>
     </footer>

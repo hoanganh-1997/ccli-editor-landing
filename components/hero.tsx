@@ -78,12 +78,12 @@ export function Hero() {
               Get early access — it&apos;s free
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] border border-border bg-transparent text-white text-[15px] font-medium font-mono no-underline hover:border-muted transition-colors"
             >
-              View on GitHub
+              Download on GitHub
             </a>
           </div>
         </FadeIn>
@@ -96,7 +96,7 @@ export function Hero() {
             <span className="text-border">·</span>
             <span>~50MB RAM</span>
             <span className="text-border">·</span>
-            <span>macOS</span>
+            <span>macOS · Linux · Windows</span>
           </div>
         </FadeIn>
       </div>

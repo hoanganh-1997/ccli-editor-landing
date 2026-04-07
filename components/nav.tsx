@@ -38,7 +38,7 @@ export function Nav() {
             Quickstart
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest"
             target="_blank"
             rel="noopener noreferrer"
             className="px-3.5 py-1.5 rounded-lg text-[13px] font-medium font-mono no-underline text-muted hover:text-white transition-colors"
