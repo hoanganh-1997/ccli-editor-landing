@@ -35,11 +35,20 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: "CCLI Editor",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CCLI Editor — Desktop Editor for Claude Code CLI",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["/og-image.png"],
     creator: "@vn_andynguyen",
   },
   robots: {
