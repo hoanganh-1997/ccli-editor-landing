@@ -2,7 +2,7 @@ import { FadeIn } from "./fade-in";
 
 export function Stats() {
   return (
-    <section className="max-w-[900px] mx-auto mb-24 px-6">
+    <section id="stats" className="max-w-[900px] mx-auto mb-24 px-6">
       <FadeIn>
         <div className="bg-surface border border-border rounded-[14px] py-8 px-6">
           <p className="text-center text-[15px] text-muted font-mono mb-6">

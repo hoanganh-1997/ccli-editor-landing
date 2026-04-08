@@ -14,7 +14,7 @@ export function Footer() {
       </p>
       <div className="flex gap-4 justify-center mt-3">
         <a
-          href="https://twitter.com"
+          href="https://x.com/vn_andynguyen"
           target="_blank"
           rel="noopener noreferrer"
           className="text-dim text-xs no-underline hover:text-muted transition-colors"

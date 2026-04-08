@@ -11,12 +11,14 @@ export default function HomePage() {
   return (
     <>
       <Nav />
-      <Hero />
-      <TerminalDemo />
-      <Features />
-      <Stats />
-      <Comparison />
-      <Waitlist />
+      <main>
+        <Hero />
+        <TerminalDemo />
+        <Features />
+        <Stats />
+        <Comparison />
+        <Waitlist />
+      </main>
       <Footer />
     </>
   );

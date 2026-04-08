@@ -34,7 +34,7 @@ export function Hero() {
           <h1 className="text-[clamp(32px,5.5vw,56px)] font-extrabold font-mono leading-[1.1] tracking-tighter text-white mb-4">
             One window for your entire
             <br />
-            <span className="text-amber">Claude Code workflow.</span>
+            <span className="text-amber">Claude Code CLI workflow.</span>
           </h1>
         </FadeIn>
 
@@ -72,10 +72,10 @@ export function Hero() {
         <FadeIn delay={0.4}>
           <div className="flex gap-3 justify-center flex-wrap">
             <a
-              href="#waitlist"
+              href="#download"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-[10px] bg-amber text-bg text-[15px] font-bold font-mono no-underline hover:opacity-85 transition-opacity"
             >
-              Get early access — it&apos;s free
+              Download — it&apos;s free
             </a>
             <a
               href="https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest"

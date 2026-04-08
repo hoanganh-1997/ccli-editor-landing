@@ -73,7 +73,7 @@ function FeatureCard({
 
 export function Features() {
   return (
-    <section className="max-w-[1100px] mx-auto mb-24 px-6">
+    <section id="features" className="max-w-[1100px] mx-auto mb-24 px-6">
       <FadeIn>
         <div className="text-center mb-4">
           <h2 className="text-[32px] font-extrabold text-white font-mono tracking-tight">

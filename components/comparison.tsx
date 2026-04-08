@@ -17,7 +17,7 @@ const rows = [
 
 export function Comparison() {
   return (
-    <section className="max-w-[900px] mx-auto mb-24 px-6">
+    <section id="comparison" className="max-w-[900px] mx-auto mb-24 px-6">
       <FadeIn>
         <div className="text-center mb-10">
           <h2 className="text-[28px] font-extrabold text-white font-mono tracking-tight">
