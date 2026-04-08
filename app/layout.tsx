@@ -6,7 +6,7 @@ const GA_ID = "G-5D9HF0N2WY";
 
 const title = "Desktop Editor for Claude Code CLI — CCLI Editor";
 const description =
-  "A 10MB desktop app that wraps Claude Code CLI with a file tree, git diffs, and live preview. See what the AI agent did without opening a full IDE. Built with Tauri v2. Free download — join the waitlist.";
+  "A 10MB desktop app that wraps Claude Code CLI with a file tree, git diffs, and live preview. See what the AI agent did without opening a full IDE. Built with Tauri v2. Free download for macOS, Linux, and Windows.";
 const url = "https://ccli-editor.vercel.app";
 
 export const metadata: Metadata = {
@@ -95,6 +95,8 @@ export default function RootLayout({
                     "A lightweight desktop app that wraps Claude Code CLI with a file tree, git diffs, browser preview, and token tracking.",
                   applicationCategory: "DeveloperApplication",
                   operatingSystem: "macOS, Linux, Windows",
+                  downloadUrl:
+                    "https://github.com/hoanganh-1997/ccli-editor-releases/releases/latest",
                   offers: {
                     "@type": "Offer",
                     price: "0",

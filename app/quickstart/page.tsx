@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { QuickstartContent } from "./content";
 
 export const metadata: Metadata = {
-  title: "Quickstart — CCLI Editor",
+  title: "CCLI Editor Quickstart — Install in 5 Minutes",
   description:
     "Get CCLI Editor running on your machine in under 5 minutes. Installation guide for macOS, Linux, and Windows.",
   alternates: {
@@ -16,7 +16,9 @@ export default function QuickstartPage() {
   return (
     <>
       <Nav />
-      <QuickstartContent />
+      <main>
+        <QuickstartContent />
+      </main>
       <Footer />
     </>
   );

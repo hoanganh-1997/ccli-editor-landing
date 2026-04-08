@@ -73,9 +73,9 @@ export function QuickstartContent() {
               <div className="w-7 h-7 rounded-lg bg-amber/10 flex items-center justify-center text-[13px] font-bold text-amber font-mono">
                 {i + 1}
               </div>
-              <h3 className="text-[16px] font-semibold text-white font-mono">
+              <h2 className="text-[16px] font-semibold text-white font-mono">
                 {step.title}
-              </h3>
+              </h2>
             </div>
             <CodeBlock code={step.code} />
           </div>
@@ -85,9 +85,9 @@ export function QuickstartContent() {
       {/* Claude Code integration */}
       <FadeIn delay={0.3}>
         <div className="bg-amber/[0.04] border border-amber/10 rounded-xl p-5 mt-10">
-          <h3 className="text-[15px] font-semibold text-amber font-mono mb-2">
+          <h2 className="text-[15px] font-semibold text-amber font-mono mb-2">
             Using with Claude Code CLI
-          </h3>
+          </h2>
           <p className="text-muted text-sm leading-relaxed mb-3">
             CCLI Editor works best with Claude Code CLI installed globally:
           </p>
@@ -106,9 +106,9 @@ export function QuickstartContent() {
       {/* Keyboard shortcuts */}
       <FadeIn delay={0.35}>
         <div className="mt-12 p-5 bg-surface rounded-xl border border-border">
-          <h3 className="text-[15px] font-semibold text-white font-mono mb-3">
+          <h2 className="text-[15px] font-semibold text-white font-mono mb-3">
             Keyboard shortcuts
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-[13px]">
             {shortcuts.map(([key, desc], i) => (
               <div
@@ -128,9 +128,9 @@ export function QuickstartContent() {
       {/* Claude Code workflow */}
       <FadeIn delay={0.4}>
         <div className="mt-12 p-5 bg-surface rounded-xl border border-border">
-          <h3 className="text-[15px] font-semibold text-white font-mono mb-3">
+          <h2 className="text-[15px] font-semibold text-white font-mono mb-3">
             Built-in slash commands
-          </h3>
+          </h2>
           <p className="text-muted text-sm mb-4 leading-relaxed">
             CCLI Editor ships with Claude Code slash commands for streamlined
             workflows:
@@ -158,9 +158,9 @@ export function QuickstartContent() {
       {/* System requirements */}
       <FadeIn delay={0.45}>
         <div className="mt-12 p-5 bg-surface rounded-xl border border-border">
-          <h3 className="text-[15px] font-semibold text-white font-mono mb-3">
+          <h2 className="text-[15px] font-semibold text-white font-mono mb-3">
             System requirements
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-[13px]">
             <div>
               <div className="text-amber font-semibold mb-1.5">macOS</div>
