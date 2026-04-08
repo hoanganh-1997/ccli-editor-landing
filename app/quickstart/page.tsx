@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Get CCLI Editor running on your machine in under 5 minutes. Installation guide for macOS, Linux, and Windows.",
   alternates: {
-    canonical: "https://ccli-editor.vercel.app/quickstart",
+    canonical: "https://ccli-editor-landing.vercel.app/quickstart",
   },
 };
 

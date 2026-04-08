@@ -4,10 +4,10 @@ import "./globals.css";
 
 const GA_ID = "G-5D9HF0N2WY";
 
-const title = "Desktop Editor for Claude Code CLI — CCLI Editor";
+const title = "Desktop Editor for Claude Code CLI — CCLI Editor App";
 const description =
-  "A 10MB desktop app that wraps Claude Code CLI with a file tree, git diffs, and live preview. See what the AI agent did without opening a full IDE. Built with Tauri v2. Free download for macOS, Linux, and Windows.";
-const url = "https://ccli-editor.vercel.app";
+  "A 10MB desktop app that wraps Claude Code CLI with a file tree, git diffs, and live preview. Built with Tauri v2. Free for macOS, Linux, and Windows.";
+const url = "https://ccli-editor-landing.vercel.app";
 
 export const metadata: Metadata = {
   title,

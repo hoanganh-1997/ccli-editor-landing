@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://ccli-editor.vercel.app";
+  const baseUrl = "https://ccli-editor-landing.vercel.app";
   return [
     {
       url: baseUrl,
