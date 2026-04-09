@@ -7,7 +7,7 @@ import { Comparison } from "@/components/comparison";
 import { Waitlist } from "@/components/waitlist";
 import { Footer } from "@/components/footer";
 
-export default function HomePage() {
+export default function HomePage() { 
   return (
     <>
       <Nav />
